@@ -22,43 +22,15 @@ describe('Automation Test', () => {
     // Traditional assertions that scrape the page for text values are not needed here.
     it('should navigate to Hello World page', () => {
 
-        // Load the Hello World  page.
-        cy.visit('https://applitools.com/helloworld')
-
-        // Verify the full  page loaded correctly.
-        cy.get('span.diff1.diff2.random-number').then($el => {
-            cy.eyesCheckWindow({
-                tag: "before click",
-                target: 'window',
-                ignore: $el
-            });
-        })
-
-        // Click on “Click me!” button.
-        cy.get('button:contains("Click me!")').click();
-
-
-        // Verify the full  page loaded correctly.
-        cy.get('span.diff1.diff2.random-number').then($el => {
-            cy.eyesCheckWindow({
-                tag: "before click",
-                target: 'window',
-                ignore: $el
-            });
-        })
-    })
-
-    it('should navigate to Hello World Diff page', () => {
-
-        // Load the Hello World Diff page.
+        // Load the Hello World page.
         cy.visit('https://applitools.com/helloworld?diff1')
 
-
-        // Verify the full  page loaded correctly.
+        // Verify the full page loaded correctly.
         cy.get('span.diff1.diff2.random-number').then($el => {
             cy.eyesCheckWindow({
                 tag: "before click",
                 target: 'window',
+                fully: true,
                 ignore: $el
             });
         })
@@ -66,16 +38,15 @@ describe('Automation Test', () => {
         // Click on “Click me!” button.
         cy.get('button:contains("Click me!")').click();
 
-
-        // Verify the full  page loaded correctly.
+        // Verify the full page loaded correctly.
         cy.get('span.diff1.diff2.random-number').then($el => {
             cy.eyesCheckWindow({
                 tag: "before click",
                 target: 'window',
+                fully: true,
                 ignore: $el
             });
         })
-
     })
 
     // This method performs cleanup after each test.
