@@ -20,8 +20,14 @@ jobs:
         with:
           node-version: 16
 
-      - name: Clean install the project
-        run: npm ci
+      - name: Set ENV
+        run: export APPLITOOLS_API_KEY='ExsmccWx5dNLKZWogxIGPvzsJaPbokuVitXVe104UdUzk110'
+        
+      - name: Install the project dependencies
+        run: npm install
+        
+      - name: Setup Applitools Eyes
+        run: npx eyes-setup
 
       - name: Execute all tests
         run: npm test
