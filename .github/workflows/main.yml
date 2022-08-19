@@ -21,7 +21,7 @@ jobs:
           node-version: 16
 
       - name: Set ENV
-        run: export APPLITOOLS_API_KEY='YlVYBW8rHLES109dXiVRiDNZgvmOjbtja0DBELn9V1k04110'
+        run: export APPLITOOLS_API_KEY=YlVYBW8rHLES109dXiVRiDNZgvmOjbtja0DBELn9V1k04110
         
       - name: Install the project dependencies
         run: npm install
